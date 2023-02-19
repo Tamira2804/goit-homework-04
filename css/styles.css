@@ -15,6 +15,7 @@
   --bg-color-dark: #2e2f42; /*navy blue*/
   --bg-color-accent: #4d5ae5; /*Iris*/
   --bg-color-hover: #404bbf; /*ocean*/
+  --bg-color-hover-footer: #31d0aa; /*green*/
   --bg-color-inactive: #8e8f99; /*light slate*/
 }
 
@@ -188,30 +189,14 @@ h6 {
   gap: 24px;
 }
 
-.features-item::before {
-  display: block;
-  content: "";
+.features-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 112px;
-
-  background-image: url("");
   background-color: var(--bg-color-light-primary);
-  background-size: 64px 64px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.icon-antenna::before {
-  background-image: url("../images/antenna.svg");
-}
-.icon-clock::before {
-  background-image: url("../images/clock.svg");
-}
-.icon-diagram::before {
-  background-image: url("../images/diagram.svg");
-}
-.icon-astronaut::before {
-  background-image: url("../images/astronaut.svg");
-}
 .subtitle {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -275,8 +260,6 @@ h6 {
 .social-item {
   width: 40px;
   height: 40px;
-  background-color: var(--bg-color-accent);
-  border-radius: 50%;
 }
 
 .social-link {
@@ -285,16 +268,18 @@ h6 {
   align-items: center;
   width: 100%;
   height: 100%;
+  background-color: var(--bg-color-accent);
+  border-radius: 50%;
+  fill: var(--bg-color-light-primary);
 }
 
 .social-icon {
   width: 16px;
   height: 16px;
-  fill: var(--bg-color-light-primary);
+  /* fill: currentColor; */
 }
-
-.social-item:hover,
-.social-item:focus {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--bg-color-hover);
 }
 
@@ -311,43 +296,40 @@ h6 {
   gap: 24px;
 }
 
-.customers-box {
+.customers-item {
+  width: 168px;
+  height: 88px;
+}
+.customers-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 168px;
-  height: 88px;
+  width: 100%;
+  height: 100%;
   background-color: var(--bg-color-light-main);
   border: 1px solid var(--bg-color-inactive);
   border-radius: 4px;
-}
-.customers-icon {
-  width: 100%;
-  height: 100%;
   fill: var(--bg-color-inactive);
 }
 
-/* .customers-icon:hover,
-.customers-icon:focus {
+.customers-icon {
+  padding: 16px 32px;
+}
+
+.customers-link:hover,
+.customers-link:focus {
   fill: var(--bg-color-hover);
-} */
+  border-color: var(--bg-color-hover);
+}
 
 /*Footer*/
 .footer {
-  display: flex;
-  justify-content: center;
-
   background-color: var(--bg-color-dark);
   padding-top: 100px;
   padding-bottom: 100px;
 }
-
-.studio {
-  display: block;
-}
-
-.social-media {
-  display: block;
+.footer .container {
+  display: flex;
 }
 
 .footer .logo {
@@ -366,6 +348,31 @@ h6 {
   padding-top: 16px;
   width: 264px;
   color: var(--text-color-secondary);
+}
+
+.studio {
+  display: block;
+  margin-right: 120px;
+}
+
+.social-media {
+  display: block;
+}
+
+.social-media .subtitle {
+  color: var(--title-color-inverted);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.social-link.inverted {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--logo-color-light);
+}
+
+.social-link.inverted:hover,
+.social-link.inverted:focus {
+  background-color: var(--bg-color-hover-footer);
 }
 
 /*PORTFOLIO*/
@@ -398,31 +405,45 @@ h6 {
 .filters .button:focus,
 .filters .button:hover {
   background-color: var(--bg-color-hover);
+  border-color: var(--bg-color-hover);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   color: var(--title-color-inverted);
   cursor: pointer;
 }
 
-.content {
+.portfolio-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.content .item {
+.portfolio-item {
   width: 360px;
   margin-right: 24px;
   margin-bottom: 48px;
 }
 
-.content .item:nth-child(3n) {
+.portfolio-item:nth-child(3n) {
   margin-right: 0;
 }
 
-.content .link {
+.portfolio-link {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--bg-color-light-secondary);
   text-decoration: none;
 }
 
-.item .card-label {
-  border: 1px solid var(--bg-color-light-secondary);
-  border-top: none;
+.portfolio-item .image {
+  border-color: transparent;
+}
+
+.portfolio-item .card-label {
+  color: var(--text-color-primary);
+}
+
+.portfolio-link:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
