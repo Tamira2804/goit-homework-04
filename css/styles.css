@@ -306,14 +306,11 @@ h6 {
   align-items: center;
   width: 100%;
   height: 100%;
+
   background-color: var(--bg-color-light-main);
   border: 1px solid var(--bg-color-inactive);
   border-radius: 4px;
   fill: var(--bg-color-inactive);
-}
-
-.customers-icon {
-  padding: 16px 32px;
 }
 
 .customers-link:hover,
@@ -368,6 +365,11 @@ h6 {
 .social-link.inverted {
   background-color: rgba(255, 255, 255, 0.1);
   fill: var(--logo-color-light);
+}
+
+.social-media .social-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .social-link.inverted:hover,
